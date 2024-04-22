@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta PostgreSQL / Impressoras</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script src="server.js" defer></script>
+</head>
+<body>
+    <h1>Consulta PostgreSQL </h1>
+    <div class="panel">
+        <div class="panel-heading">Informações de Conexão</div>
+        <div class="panel-body">
+            <div class="input-group">
+                <label for="host">Host:</label>
+                <input type="text" id="host" name="host" required>
+            </div>
+            <div class="input-group">
+                <label for="port">Port:</label>
+                <input type="number" id="port" name="port" required>
+            </div>
+            <div class="input-group">
+                <label for="database">Database:</label>
+                <input type="text" id="database" name="database" required>
+            </div>
+            <div class="input-group">
+                <label for="user">User:</label>
+                <input type="text" id="user" name="user" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="button" onclick="connectAndQuery()">Connect and Query</button>
+        </div>
+    </div>
+
+    <div id="results" class="panel">
+        <div class="panel-heading">Resultados</div>
+        <div class="panel-body">
+            <!-- Resultados serão exibidos aqui -->
+        </div>
+    </div>
+</body>
+</html>

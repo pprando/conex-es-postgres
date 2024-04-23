@@ -1,19 +1,13 @@
 function connectAndQuery() {
-    const host = document.getElementById('host').value;
-    const port = document.getElementById('port').value;
-    const database = document.getElementById('database').value;
-    const user = document.getElementById('user').value;
-    const password = document.getElementById('password').value;
+    // const host = document.getElementById('host').value;
+    // const port = document.getElementById('port').value;
+    // const database = document.getElementById('database').value;
+    // const user = document.getElementById('user').value;
+    // const password = document.getElementById('password').value;
 
-    const connectionString = `postgresql://${user}:${password}@${host}:${port}/${database}`;
+    // const connectionString = `postgresql://${user}:${password}@${host}:${port}/${database}`;
 
-    fetch('/query', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ connectionString })
-    })
+    fetch('http://127.0.0.1:3000/query')
     .then(response => response.json())
     .then(data => {
         displayResults(data);
@@ -24,6 +18,7 @@ function connectAndQuery() {
 }
 
 function displayResults(data) {
+    debugger
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = ''; // Limpa os resultados anteriores
 
